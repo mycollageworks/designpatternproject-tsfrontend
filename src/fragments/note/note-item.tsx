@@ -27,7 +27,12 @@ export default function NoteItem({
         ✏️ Edit
       </button>
 
-      <p>{note.content}</p>
+      <p>{note.content.split("\n").map((line, index) => (
+        <span key={index}>
+          {line}
+          <br />
+        </span>
+      ))}</p>
       <span className="text-sm text-gray-500">{note.date}</span>
     </li>
   );
