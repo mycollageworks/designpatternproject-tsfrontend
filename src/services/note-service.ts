@@ -4,8 +4,12 @@ import { Note } from "../models/note";
 const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:8080";
 
 export const NoteService = {
-  async getNotes(): Promise<Note[]> {
-    const response = await axios.get(`${BASE_URL}/notes`);
+  async getNotes(searchTerm: string = ""): Promise<Note[]> {
+    const response = await axios.get(`${BASE_URL}/notes`, {
+      params: {
+        search: searchTerm,
+      },
+    });
     return response.data.notes;
   },
 

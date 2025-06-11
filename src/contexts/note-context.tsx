@@ -4,12 +4,12 @@ import { NoteService } from "../services/note-service";
 
 interface NoteContextType {
   notes: Note[];
-  refresh: () => void;
+  refresh: (searchTerm?: string) => void;
 }
 
 const NoteContext = createContext<NoteContextType>({
   notes: [],
-  refresh: () => { },
+  refresh: (searchTerm?: string) => { },
 });
 
 export const NoteProvider: React.FC<{ children: React.ReactNode }> = ({
@@ -17,9 +17,9 @@ export const NoteProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [notes, setNotes] = useState<Note[]>([]);
 
-  const load = async () => {
+  const load = async (searchTerm?: string) => {
     try {
-      const data = await NoteService.getNotes();
+      const data = await NoteService.getNotes(searchTerm);
       setNotes(data);
     } catch (e) {
       console.error("Failed to load notes", e);
