@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNotes } from "../contexts/note-context";
-import { NoteFactory } from "../models/note-factory";
-import { NoteService } from "../services/note-service";
 import NoteForm from "../fragments/note/note-form";
-import { Note } from "../models/note";
 import NoteItem from "../fragments/note/note-item";
 import NoteSearch from "../fragments/note/note-search";
+import { Note } from "../models/note";
+import { NoteFactory } from "../models/note-factory";
+import { NoteService } from "../services/note-service";
 
 const NotesPage: React.FC = () => {
   const { notes, refresh } = useNotes();
   const [updateId, setUpdateId] = useState<number | null>(null);
-  const [searchTerm, setSearchTerm] = useState<string>("");
   const [note, setNote] = useState<{
     content: string;
   }>({
