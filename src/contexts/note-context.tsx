@@ -9,7 +9,7 @@ interface NoteContextType {
 
 const NoteContext = createContext<NoteContextType>({
   notes: [],
-  refresh: (searchTerm?: string) => { },
+  refresh: (searchTerm?: string) => {},
 });
 
 export const NoteProvider: React.FC<{ children: React.ReactNode }> = ({

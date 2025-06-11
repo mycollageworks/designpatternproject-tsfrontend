@@ -69,7 +69,7 @@ const NotesPage: React.FC = () => {
 
     refresh();
     handleResetForm();
-  }
+  };
 
   const handleSave = async () => {
     const { content } = note;
@@ -141,7 +141,9 @@ const NotesPage: React.FC = () => {
             />
           ))}
           {notes.length === 0 && (
-            <li className="text-gray-500">No notes available. Please add a note.</li>
+            <li className="text-gray-500">
+              No notes available. Please add a note.
+            </li>
           )}
         </ul>
       </div>

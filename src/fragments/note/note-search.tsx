@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function NoteSearch({
-  refresh
+  refresh,
 }: {
   refresh: (searchTerm?: string) => void;
 }) {

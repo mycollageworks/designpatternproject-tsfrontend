@@ -3,7 +3,7 @@ import { Note } from "../../models/note";
 export default function NoteItem({
   note,
   onEdit,
-  onDelete
+  onDelete,
 }: {
   note: Note;
   onEdit: () => void;
@@ -11,7 +11,6 @@ export default function NoteItem({
 }) {
   return (
     <li className="border p-2 mb-2 rounded shadow">
-
       {/* action button to delete note */}
       <button
         className="ml-2 bg-red-500 text-white px-2 py-1 rounded float-right"
@@ -19,7 +18,6 @@ export default function NoteItem({
       >
         🗑️ Delete
       </button>
-
 
       {/* action button to edit note */}
       <button
@@ -32,5 +30,5 @@ export default function NoteItem({
       <p>{note.content}</p>
       <span className="text-sm text-gray-500">{note.date}</span>
     </li>
-  )
+  );
 }

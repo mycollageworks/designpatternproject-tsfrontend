@@ -11,7 +11,6 @@ export default function NoteForm({
   onSave: () => void;
   onReset: () => void;
 }) {
-
   return (
     <div className="mb-4">
       <textarea
